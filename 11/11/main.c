@@ -7,14 +7,32 @@
 
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    int i = 300;
-    
-    int *pi = &i;
-    char *pc = &i;
-    
-    printf("%i, %i, %i\n", i, *pi, *pc);
-    
-    return 0;
+#if 0
+void swap (int x, int y){
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
+}
+
+void main(void){
+    int a = 3;
+    int b = 5;
+    swap(a, b);
+    printf("a: %i, b: %i\n", a, b);
+}
+#endif
+
+void swap(int *x, int *y){
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void main(void){
+    int a = 3;
+    int b = 5;
+    swap(&a, &b);
+    printf("a: %i, b: %i\n", a, b);
 }
